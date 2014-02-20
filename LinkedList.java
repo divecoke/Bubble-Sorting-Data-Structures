@@ -1,24 +1,25 @@
-import java.util.Random;
-
-/** 
- * @author 		Magdalene Benson <mebenson12@winona.edu>
- * @since		02/10/2014
- * @version		1.3
- * 
- * @description	A class that implements a Linked List.
- */
 
 /**
- * Class: 		LinkedList
+*  @Author 	Magdalene Benson <thecodingbarista@gmail.com>
+*  Date: 	02/18/2014  
+*  Course: 	WSU-R CS341 Data Structures
+*  Assignment: Assignment 3 - Sort Algorithms (LinkedList.java)
+*  
+*  Description: Implements a Linked List Data Structure.
+*/
+
+import java.util.Random;
+/**
+ * Class: 	LinkedList
  * Contains:	LinkedList() 		// Default Constructor
- * 				LinkedList(param) 	// User-Defined Constructor
- * 				add()
- * 				findIndexed()
- * 				bubbleSort()
- * 				printList()
- * 				toString() 			// Overrides default
- * 				isEmpty()
- * 				size()
+ * 		LinkedList(param) 	// User-Defined Constructor
+ * 		add()
+ * 		findIndexed()
+ * 		bubbleSort()
+ * 		printList()
+ * 		toString() 		// Overrides default
+ * 		isEmpty()
+ * 		size()
  * Function:	Creates a new  Linked List.
  */
 public class LinkedList {
@@ -32,9 +33,9 @@ public class LinkedList {
 	 * Constructor: LinkedList::LinkedList().
 	 * 
 	 * Function: 	Creates a new empty Linked List.
-	 * 				Sets instance variables.
+	 * 		Sets instance variables.
 	 * 
-	 * @param 		None
+	 * @param 	None
 	 */
 	public LinkedList() {
 		head = null;
@@ -42,12 +43,12 @@ public class LinkedList {
 	} // End Constructor method
 	
 	/**
-	 * Method: 		LinkedList::add().
+	 * Method: 	LinkedList::add().
 	 * 
 	 * Function: 	Adds the number entered by user to the Linked List.
-	 * 				It is added into the list in order from smallest to largest.
+	 * 		It is added into the list in order from smallest to largest.
 	 * 
-	 * @param 		myKey The int to be added to the  Linked List.
+	 * @param 	myKey The int to be added to the  Linked List.
 	 */
 	public void add(int myKey) {
 	    
@@ -58,7 +59,7 @@ public class LinkedList {
 			size++;
 		} else {
 		
-		// Start at the head Node
+	    // Start at the head Node
 	    current = head;
 	    previous = null;
 	    
@@ -78,23 +79,23 @@ public class LinkedList {
 	    }
 	    
 	    // Create the new Node with the unique key to insert into the list
-	 	Node newNode = new Node(myKey, null);	
+	    Node newNode = new Node(myKey, null);	
 	    current.setNext(newNode);
-	    size++;		// Increase the size of the List
+	    size++;				// Increase the size of the List
 	    
 		}
 	    
 	} // End add() method
 	
 	/**
-	 * Method: 		LinkedList::findIndexed().
+	 * Method: 	LinkedList::findIndexed().
 	 * 
 	 * Function: 	Finds the key at the user-defined index and prints the
-	 * 				key value found back to the user.
+	 * 		key value found back to the user.
 	 * 
-	 * @param 		myIndex 					The Key int to be removed from the Linked List.
+	 * @param 	myIndex 			The Key int to be removed from the Linked List.
 	 * @exception	IndexOutOfBoundsException 	Thrown when index does not exist in the list.
-	 * @exception	EmptyListException 			Thrown when the list is empty.
+	 * @exception	EmptyListException 		Thrown when the list is empty.
 	 */
 	public int findIndexed(int myIndex)
 			throws IndexOutOfBoundsException	{
@@ -116,13 +117,13 @@ public class LinkedList {
 	} // End findIndexed() method
 
 	/**
-	 * Method: 		LinkedList::validateOrder().
+	 * Method: 	LinkedList::validateOrder().
 	 * 
 	 * Function: 	Goes through each Node in the list to validate
-	 * 				it is ordered from smallest to largest key int.
+	 * 		it is ordered from smallest to largest key int.
 	 * 
-	 * @param 		None
-	 * @return		Returns true if the list has been sorted properly, false otherwise.
+	 * @param 	None
+	 * @return	Returns true if the list has been sorted properly, false otherwise.
 	 */
 	public boolean validateOrder() {
 		
@@ -140,35 +141,35 @@ public class LinkedList {
 	}
 	
 	/**
-	 * Method: 		LinkedList::printList().
+	 * Method: 	LinkedList::printList().
 	 * 
 	 * Function: 	Returns a pretty String representation of the list for the user.
 	 * 
-	 * @param 		None
-	 * @return		result	The String to be printed back to the user.
+	 * @param 	None
+	 * @return	result	The String to be printed back to the user.
 	 */
 	public String printList() {
 	    
-	    current = head;							// Start at the head,
+	    current = head;					// Start at the head,
 	    String result = "";
 	    int nodeIndex = 0;
 	    
 	    while (current != null){				// iterate through each Node
-	       result += "[" + nodeIndex + "]" + current.getInt() + " ";	// and get the value
+	       result += "[" + nodeIndex + "]" + current.getInt() + " ";// and get the value
 	       current = current.getNext();
 	       nodeIndex++;
 	    }  
 	    
-	    return result;							// to print back to the user.
+	    return result;					// to print back to the user.
 
 	} // End printList() method
 	
 	/**
-	 * Method:			LinkedList::bubbleSort()
+	 * Method:	LinkedList::bubbleSort()
 	 * 
-	 * Function:		Sorts the contents of the data using a bubble sort algorithm.
+	 * Function:	Sorts the contents of the data using a bubble sort algorithm.
 	 * 
-	 * @param			None
+	 * @param	None
 	 */
 	public void bubbleSort() {
 		
@@ -199,11 +200,11 @@ public class LinkedList {
 	} // End bubbleSort() method
 	
 	/**
-	 * Method:			LinkedList::size()
+	 * Method:	LinkedList::size()
 	 * 
-	 * Function:		Returns the size variable of the Linked List.
+	 * Function:	Returns the size variable of the Linked List.
 	 * 
-	 * @return			size	The int variable size of the Linked List.
+	 * @return	size	The int variable size of the Linked List.
 	 */
 	public int size() { 
 		return size;
@@ -218,4 +219,3 @@ public class LinkedList {
 	} // End isEmpty() method
 	
 } // End LinkedList Class
-
