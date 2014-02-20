@@ -1,19 +1,20 @@
 /**
- * @author 		Magdalene Benson <mebenson12@winona.edu>
- * @version		1.0
- * @since		02/03/2014
- * 
- * @description	Implements a Linked Array List class.
- */
+*  @Author 	Magdalene Benson <thecodingbarista@gmail.com>
+*  Date: 	02/18/2014  
+*  Course: 	WSU-R CS341 Data Structures
+*  Assignment: Assignment 3 - Sort Algorithms (ArrayList.java)
+*  
+*  Description: The implimentation of a linked list containing int arrays.
+*/
 
 /**
- * Class: 		ArrayList
- * Contains:	ArrayList() 		// Default Constructor
- * 				add()
- * 				bubbleSort()
- * 				swap()
- * 				printArrayList()
- * 				size()
+ * Class: 	ArrayList
+ * Contains:	ArrayList() 	// Default Constructor
+ * 		add()
+ * 		bubbleSort()
+ * 		findIndexed()
+ * 		printArrayList()
+ * 		size()
  * Function:	Creates a new Array List.
  */
 public class ArrayList {
@@ -29,9 +30,9 @@ public class ArrayList {
 	 * Constructor: ArrayList::ArrayList().
 	 * 
 	 * Function: 	Creates a new empty Array List with one ArrayNode.
-	 * 				Sets instance variables.
+	 * 		Sets instance variables.
 	 * 
-	 * @param 		None
+	 * @param 	None
 	 */
 	public ArrayList() {
 		head = new ArrayNode();
@@ -40,12 +41,12 @@ public class ArrayList {
 	}
 	
 	/**
-	 * Method: 		ArrayList::add().
+	 * Method: 	ArrayList::add().
 	 * 
 	 * Function: 	Adds the number entered by user to the Array List.
-	 * 				If full capacity is reached the list is expanded.
+	 * 		If full capacity is reached the list is expanded.
 	 * 
-	 * @param 		myKey The int to be added to the Array List.
+	 * @param 	myKey The int to be added to the Array List.
 	 */
 	public void add(int myKey) {
 		
@@ -76,18 +77,18 @@ public class ArrayList {
 	}// Ends add() method
 	
 	/**
-	 * Method: 		ArrayList::findIndexed().
+	 * Method: 	ArrayList::findIndexed().
 	 * 
 	 * Function: 	Returns to the user the key value located at the desired
-	 * 				index being searched for.
-	 * 				Throws IndexOutOfBoundsException when index entered is
-	 * 				invalid or does not exist.
+	 * 		index being searched for.
+	 * 		Throws IndexOutOfBoundsException when index entered is
+	 * 		invalid or does not exist.
 	 * 
-	 * @param 		myIndex 	The index of the data to be returned.
-	 * @return		result		Returns the key value at this index.
+	 * @param 	myIndex The index of the data to be returned.
+	 * @return	result	Returns the key value at this index.
 	 * @exception	IndexOutOfBoundsException	
 	 */
-	/*public int findIndexed(int myIndex)
+	public int findIndexed(int myIndex)
 					throws IndexOutOfBoundsException {
 		
 		if (myIndex > (size*NODE_CAPACITY) || myIndex < 0)
@@ -100,28 +101,28 @@ public class ArrayList {
 		int result = 0;
 		int dataIndex = 0;
 		
-		while ( current != null ) {						// go through each node
-			currentArray = current.getArray();			// copy the array in that node
+		while ( current != null ) {				// go through each node
+			currentArray = current.getArray();		// copy the array in that node
 			for (int i = 0; i < NODE_CAPACITY; i++) {	// go through every data in the array
-				if (dataIndex == myIndex) {				// until the index matches the desired spot
-					result = currentArray[i];			// and store the result...
+				if (dataIndex == myIndex) {		// until the index matches the desired spot
+					result = currentArray[i];	// and store the result...
 				}
 				dataIndex++;
 			}
 			previous = current;
 			current = current.getNext();
 		}
-		return result;									// ...to return to the user
+		return result;						// ...to return to the user
 		
-	}// Ends add() method*/
+	}// Ends findIndexed() method
 	
 	/**
-	 * Method: 		ArrayList::printArrayList().
+	 * Method: 	ArrayList::printArrayList().
 	 * 
 	 * Function: 	Returns a pretty String representation of the full list array for the user.
 	 * 
-	 * @param 		None
-	 * @return		result	The String to be printed back to the user.
+	 * @param 	None
+	 * @return	result	The String to be printed back to the user.
 	 */
 	public String printArrayList() {
 		String result = "";
@@ -161,11 +162,11 @@ public class ArrayList {
 	}// Ends increaseCapacity() method
 		
 	/**
-	* Method:		ArrayList::bubbleSort()
+	* Method:	ArrayList::bubbleSort()
 	* 
-	* Function:		Sorts the contents of the data using a bubble sort algorithm.
+	* Function:	Sorts the contents of the data using a bubble sort algorithm.
 	* 
-	* @param		None
+	* @param	None
 	*/
 	public void bubbleSort() {
 		
@@ -219,12 +220,12 @@ public class ArrayList {
 	}// End bubbleSort() method
 	
 	/**
-	 * Method:			ArrayList.validateOrder()
+	 * Method:	ArrayList.validateOrder()
 	 * 
-	 * Function:		Checks to see that the ArrayList is indeed sorted.
+	 * Function:	Checks to see that the ArrayList is indeed sorted.
 	 * 
-	 * @param			None
-	 * @return			True is sorted, false otherwise.
+	 * @param	None
+	 * @return	True is sorted, false otherwise.
 	 */
 	public boolean validateOrder() {
 		boolean result = false;
@@ -245,15 +246,15 @@ public class ArrayList {
 	}
 	
 	/**
-	 * Method:			ArrayList::size()
+	 * Method:	ArrayList::size()
 	 * 
-	 * Function:		Returns the number of ArrayNodes currently in the list.
+	 * Function:	Returns the number of ArrayNodes currently in the list.
 	 * 
-	 * @return			size	The int variable size of the Array List.
+	 * @return	size	The int variable size of the Array List.
 	 */
 	public int size() { 
 		return size; 
 	}
 	
 	
-} // End LinkedArray Class
+} // End ArrayList Class
