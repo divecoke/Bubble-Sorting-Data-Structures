@@ -9,13 +9,11 @@
 
 /**
  * Class: 	ArrayNode
- * Contains:	ArrayNode() 			// Default Constructor
- * 		ArrayNode(param) 		// User-Defined Constructor
- * 		ArrayNode(param, param) 	// User-Defined Constructor
+ * Contains:	ArrayNode() 	// Default Constructor
  * 		setNext()
- * 		setInt(param, param)
+ * 		setInt()
  * 		getNext()
- * 		getInt(param, param)
+ * 		getInt(p)
  * Function:	Creates a new ArrayNode.
  */
 public class ArrayNode {
@@ -24,12 +22,9 @@ public class ArrayNode {
 	 * The int array stored in the ArrayNode.
 	 */
 	final int DEFAULT_CAPACITY = 25;
+	
 	private int[] array;
 	private int size = 0;
-	
-	/**
-	 * A ArrayNode that points to the next element/ArrayNode.
-	 */
 	private ArrayNode next;
 	
 	/**
@@ -100,4 +95,5 @@ public class ArrayNode {
 	public int getSize() {
 		return size;
 	}
-}
+	
+} // End ArrayNode class
