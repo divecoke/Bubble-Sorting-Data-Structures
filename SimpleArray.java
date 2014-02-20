@@ -1,23 +1,23 @@
+/**
+*  @Author 	Magdalene Benson <thecodingbarista@gmail.com>
+*  Date:	02/18/2014  
+*  Course: 	WSU-R CS341 Data Structures
+*  Assignment: Assignment 3 - Sorting Algorithms (SimpleArray.java)
+*  
+*  Description: Implements a dynamic iny array.
+*/
+
 import java.util.Arrays;
 import java.util.Random;
-
-/** 
- * @author 		Magdalene Benson <mebenson12@winona.edu>
- * @since		02/03/2014
- * @version		1.0
- * 
- * @description	A class that implements a Simple Array.
- */
-
 /**
- * Class:		SimpleArray
- * Contains:	SimpleArray()	// Constructor
- * 				add()
- * 				validateOrdered()
- * 				findIndexed()
- * 				bubbleSort()
- * 				expand()
- * 				toString()
+ * Class:	SimpleArray
+ * Contains:	SimpleArray()	// Default Constructor
+ * 		add()
+ * 		validateOrdered()
+ * 		findIndexed()
+ * 		bubbleSort()
+ * 		expand()
+ * 		toString()
  * Function:	Creates a SimpleArray object.
  */
 public class SimpleArray {
@@ -32,27 +32,27 @@ public class SimpleArray {
 	int size;
 	
 	/**
-	 * Constructor:		SimpleArray::SimpleArray()
+	 * Constructor:	SimpleArray::SimpleArray()
 	 * 
-	 * Function:		Sets the instance variables for the data object created.
+	 * Function:	Sets the instance variables for the data object created.
 	 * 
-	 * @param			None
+	 * @param	None
 	 */
 	public SimpleArray() {
 		data = new int[SIZE]; 	// initialize the array
-		myInt = 0;				// set the instance variables
-		size = 0;				// nothing in the array yet
+		myInt = 0;		// set the instance variables
+		size = 0;		// nothing in the array yet
 		
 	} // End Default Constructor
 	
 	/**
-	 * Method:			SimpleArray::add()
+	 * Method:	SimpleArray::add()
 	 * 
-	 * Function:		Adds the key value to the next position in the data.
-	 * 					Copies contents to bigger storage allocation if needed.
+	 * Function:	Adds the key value to the next position in the data.
+	 * 		Copies contents to bigger storage allocation if needed.
 	 * 
-	 * @param			myInt 		The key value to add to the data.
-	 * @return			boolean		Return true if the int was successfully added to the array.
+	 * @param	myInt 		The key value to add to the data.
+	 * @return	boolean		Return true if the int was successfully added to the array.
 	 */
 	public void add(int myInt) {
 		
@@ -63,18 +63,18 @@ public class SimpleArray {
 			}
 		}
 		
-		expand(size + 1);			// Expand capacity in necessary
+		expand(size + 1);		// Expand capacity
 		data[size++] = myInt;		// Add int to the array
 		
 	} // End add() method
 	
 	/**
-	 * Method:			SimpleArray::validateOrdered()
+	 * Method:	SimpleArray::validateOrdered()
 	 * 
-	 * Function:		Checks the value at this index and returns value to the user.
+	 * Function:	Checks the value at this index and returns value to the user.
 	 * 
-	 * @param			None
-	 * @return			Returns true if the array has been ordered properly, false otherwise.
+	 * @param	None
+	 * @return	Returns true if the array has been ordered properly, false otherwise.
 	 */
 	public boolean validateOrdered() {
 		boolean result = false;
@@ -86,7 +86,7 @@ public class SimpleArray {
 				result = true;
 		}
 		return result;
-	}
+	} // End validateOrdered() method
 	
 	// The helper method for the validateOrder method.
 	private int findIndexed(int myIndex)
@@ -100,11 +100,11 @@ public class SimpleArray {
 	} // End findIndexed() method
 	
 	/**
-	 * Method:			SimpleArray::bubbleSort()
+	 * Method:	SimpleArray::bubbleSort()
 	 * 
-	 * Function:		Sorts the contents of the data using a bubble sort algorithm.
+	 * Function:	Sorts the contents of the data using a bubble sort algorithm.
 	 * 
-	 * @param			None
+	 * @param	None
 	 */
 	public void bubbleSort() {
 		int in, out;
@@ -126,10 +126,10 @@ public class SimpleArray {
 	// A method to expand the array when more space is required in the array.
 	private void expand(int minCapacity) {
 		
-		int oldCapacity = data.length;				// Get current capacity
+		int oldCapacity = data.length;		// Get current capacity
 		
-	    if (minCapacity > oldCapacity) {			// If more storage is needed
-	      int newCapacity = oldCapacity + 1;		// Increase capacity
+	    if (minCapacity > oldCapacity) {		// If more storage is needed
+	      int newCapacity = oldCapacity + 1;	// Increase capacity
 	      
 	      if (newCapacity < minCapacity)
 	        newCapacity = minCapacity;
@@ -139,13 +139,13 @@ public class SimpleArray {
 	} // End expand() method
 	
 	/**
-	 * Method:			SimpleArray::toString()
+	 * Method:	SimpleArray::toString()
 	 * 
-	 * Function:		Generates a String to print for the user 
-	 * 					to show contents of the  SimpleArray.
+	 * Function:	Generates a String to print for the user 
+	 * 		to show contents of the  SimpleArray.
 	 * 
-	 * @return			result		The String of data from the array.
-	 * @overrides					java.lang.Object.toString
+	 * @return	result	The String of data from the array.
+	 * @overrides	java.lang.Object.toString
 	 */
 	public String toString() {
 		
@@ -156,6 +156,6 @@ public class SimpleArray {
 		}
 		
 		return result;
-	} // End toString method
+	} // End toString() method
 	
-}
+} // End SimpleArray Class
