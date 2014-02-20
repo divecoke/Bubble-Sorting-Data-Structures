@@ -1,6 +1,6 @@
 /**
 *  @Author 	Magdalene Benson <thecodingbarista@gmail.com>
-*  Date: 1	2/12/2013  
+*  Date:	02/18/2014  
 *  Course: 	WSU-R CS341 Data Structures
 *  Assignment: Assignment 3 - Sorting Algorithms (Node.java)
 *  
